@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
 body {
   margin: 0;
   padding: 0;
@@ -15,11 +14,41 @@ body {
 }
 
 .header-brand {
-  color: #00b4d8;
+  color: #4895ef;
   font-family: 'Fredoka One', cursive;
   font-size: 2rem;
 }
 
 .header-brand-img {
   width: 15%;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner-text span {
+  font-size: 4rem;
+  font-family: 'Fredoka One', cursive;
+  margin: 0.6rem 0;
+  color: #4895ef;
+}
+
+.banner-text span:first-of-type {
+  color: #ef476f;
+}
+
+.banner-text span:last-of-type {
+  color: #ef476f;
+}
+
+.banner-img {
+  width: 45%;
 }
