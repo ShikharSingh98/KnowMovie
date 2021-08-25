@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khula&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -84,4 +88,89 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.modal-container {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.show-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #ffffff;
+  width: 700px;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.fa-times {
+  cursor: pointer;
+  font-size: 1.5rem;
+  float: right;
+}
+
+.trailer-video-container {
+  display: flex;
+  justify-content: center;
+}
+
+.trailer-video {
+  width: 590px;
+  height: 320px;
+}
+
+#movie-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem;
+}
+
+.overview-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overview-heading {
+  font-family: 'Khula', sans-serif;
+  font-size: 2rem;
+}
+
+.overview {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.rating-value {
+  font-size: 2.5rem;
+  font-family: 'Khula', sans-serif;
+}
+.fa-star {
+  color: rgb(231, 177, 40);
+  font-size: 2rem;
 }

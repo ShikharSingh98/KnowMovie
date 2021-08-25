@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KnowMovie</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -22,10 +29,40 @@
       </div>
       <img class="banner-img" src="./assets/banner.png" alt="banner-img" />
     </div>
+
     <!-- Movies Container -->
     <div class="movies-container" id="movies-container"></div>
+    <!-- Loader -->
     <div class="loader" id="loader"></div>
 
+    <!-- Modal -->
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <i class="fas fa-times" id="close-modal"></i>
+        <div class="modal-header">
+          <span id="movie-name"></span>
+          <div class="rating">
+            <span id="rating" class="rating-value"></span
+            ><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="modal-content" id="modal-content">
+          <div class="trailer-video-container">
+            <iframe
+              title="Movie Trailer"
+              frameborder="0"
+              allowfullscreen
+              id="trailer-video"
+              class="trailer-video"
+            ></iframe>
+          </div>
+          <div class="movie-info">
+            <span class="overview-heading">Overview</span>
+            <span class="overview" id="overview"></span>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./apiKey.js"></script>
     <script src="./app.js"></script>
   </body>
