@@ -2,9 +2,7 @@ const movieContainer = document.getElementById('movies-container');
 const loader = document.getElementById('loader');
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('close-modal');
-const trailerVideoContainer = document.getElementById(
-  'trailer-video-container'
-);
+const trailerVideoContainer = document.getElementById('trailer-video-container');
 const trailerVideo = document.getElementById('trailer-video');
 const noTrailerMessage = document.getElementById('no-trailer-message');
 const movieName = document.getElementById('movie-name');
@@ -12,7 +10,7 @@ const rating = document.getElementById('rating');
 const overview = document.getElementById('overview');
 
 const baseURL = `https://api.themoviedb.org/3/movie`;
-
+let pageCount = 1;
 let movies = [];
 
 let selectedMovie = null;
@@ -71,20 +69,13 @@ function displayRating(vote_average) {
 
 async function openModal(event) {
   modal.classList.add('show-modal');
-  selectedMovie = await getDataFromApi(
-    `/${event.target.dataset.movieId}?append_to_response=videos`
-  );
+  selectedMovie = await getDataFromApi(`/${event.target.dataset.movieId}?append_to_response=videos`);
 
   if (selectedMovie.videos.results.length) {
-    const movieTrailerVideo = selectedMovie.videos.results.find(
-      (movie) => movie.type === 'Trailer' || movie.type === 'Teaser'
-    );
+    const movieTrailerVideo = selectedMovie.videos.results.find((movie) => movie.type === 'Trailer' || movie.type === 'Teaser');
     noTrailerMessage.remove();
     trailerVideoContainer.append(trailerVideo);
-    trailerVideo.setAttribute(
-      'src',
-      `https://www.youtube.com/embed/${movieTrailerVideo.key}`
-    );
+    trailerVideo.setAttribute('src', `https://www.youtube.com/embed/${movieTrailerVideo.key}`);
   } else {
     trailerVideo.remove();
     trailerVideoContainer.append(noTrailerMessage);
@@ -105,7 +96,7 @@ function createMovieCard(movie) {
 }
 
 async function displayMovieCard() {
-  movies = await getDataFromApi('/popular?language=en-US&page=1');
+  movies = await getDataFromApi(`/popular?language=en-US&page=${pageCount}`);
   movies.forEach((movie) => {
     createMovieCard(movie);
   });
@@ -113,3 +104,11 @@ async function displayMovieCard() {
 }
 
 displayMovieCard();
+
+window.addEventListener('scroll', function () {
+  const { scrollY, innerHeight } = window;
+  if (scrollY + innerHeight >= document.documentElement.offsetHeight) {
+    pageCount++;
+    displayMovieCard();
+  }
+});
