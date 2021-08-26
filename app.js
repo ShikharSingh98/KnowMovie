@@ -2,7 +2,11 @@ const movieContainer = document.getElementById('movies-container');
 const loader = document.getElementById('loader');
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('close-modal');
+const trailerVideoContainer = document.getElementById(
+  'trailer-video-container'
+);
 const trailerVideo = document.getElementById('trailer-video');
+const noTrailerMessage = document.getElementById('no-trailer-message');
 const movieName = document.getElementById('movie-name');
 const rating = document.getElementById('rating');
 const overview = document.getElementById('overview');
@@ -71,10 +75,15 @@ async function openModal(event) {
     const movieTrailerVideo = selectedMovie.videos.results.find(
       (movie) => movie.type === 'Trailer' || movie.type === 'Teaser'
     );
+    noTrailerMessage.remove();
+    trailerVideoContainer.append(trailerVideo);
     trailerVideo.setAttribute(
       'src',
       `https://www.youtube.com/embed/${movieTrailerVideo.key}`
     );
+  } else {
+    trailerVideo.remove();
+    trailerVideoContainer.append(noTrailerMessage);
   }
   movieName.textContent = selectedMovie.title;
   displayRating(selectedMovie.vote_average);

@@ -59,7 +59,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 3rem;
+  margin-top: 7rem;
 }
 
 .movies-container img {
@@ -132,6 +132,26 @@ body {
 .trailer-video {
   width: 590px;
   height: 320px;
+}
+
+.no-trailer-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 590px;
+  height: 320px;
+}
+
+.fa-exclamation-triangle {
+  color: #ffaa00;
+  font-size: 5rem;
+}
+
+.error-message {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 2rem;
+  font-size: 1.5rem;
 }
 
 #movie-name {
