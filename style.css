@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Khula&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
@@ -7,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #011627;
 }
 
 .header-container {
@@ -14,13 +16,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 3.5px solid #dfdfdf;
 }
 
 .header-brand {
-  color: #4895ef;
-  font-family: 'Fredoka One', cursive;
+  color: #89fc00;
   font-size: 2rem;
+  font-family: 'Alata', sans-serif;
 }
 
 .header-brand-img {
@@ -30,6 +31,7 @@ body {
 .banner-container {
   display: flex;
   justify-content: space-around;
+  margin: 4rem;
 }
 
 .banner-text {
@@ -42,19 +44,15 @@ body {
   font-size: 4rem;
   font-family: 'Fredoka One', cursive;
   margin: 0.6rem 0;
-  color: #4895ef;
+  color: #ffffff;
 }
 
-.banner-text span:first-of-type {
-  color: #ef476f;
-}
-
-.banner-text span:last-of-type {
-  color: #ef476f;
+.banner-text :nth-of-type(2) {
+  color: #f71735;
 }
 
 .banner-img {
-  width: 45%;
+  width: 40%;
 }
 
 .movies-container {
@@ -116,9 +114,7 @@ body {
 
 .modal-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 3rem;
+  flex-direction: column;
   margin-bottom: 2rem;
 }
 
@@ -166,11 +162,8 @@ body {
   font-weight: 500;
 }
 
-.rating-value {
-  font-size: 2.5rem;
-  font-family: 'Khula', sans-serif;
-}
-.fa-star {
+.fa-star,
+.fa-star-half {
   color: rgb(231, 177, 40);
-  font-size: 2rem;
+  font-size: 1.2rem;
 }

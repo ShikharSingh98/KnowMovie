@@ -39,11 +39,30 @@ closeModal.addEventListener('click', function () {
   modal.classList.remove('show-modal');
 });
 
+function displayRating(vote_average) {
+  const calculatedRating = (vote_average * 5) / 10;
+  const numberOfStars = Math.trunc(calculatedRating);
+  const decimalValue = Math.trunc((calculatedRating * 10) % 10);
+
+  let ratingData = '';
+
+  for (let i = 0; i < numberOfStars; i++) {
+    ratingData += '<i class="fas fa-star"></i>';
+  }
+
+  if (decimalValue >= 4 && decimalValue <= 7) {
+    ratingData += '<i class="fas fa-star-half"></i>';
+  }
+
+  rating.innerHTML = ratingData;
+}
+
 async function openModal(event) {
   modal.classList.add('show-modal');
   selectedMovie = await getDataFromApi(
     `/${event.target.dataset.movieId}?append_to_response=videos`
   );
+
   if (selectedMovie.videos.results.length) {
     const movieTrailerVideo = selectedMovie.videos.results.find(
       (movie) => movie.type === 'Trailer' || movie.type === 'Teaser'
@@ -54,7 +73,7 @@ async function openModal(event) {
     );
   }
   movieName.textContent = selectedMovie.title;
-  rating.textContent = selectedMovie.vote_average;
+  displayRating(selectedMovie.vote_average);
   overview.textContent = selectedMovie.overview;
 }
 
