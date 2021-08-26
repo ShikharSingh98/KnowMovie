@@ -39,6 +39,10 @@ closeModal.addEventListener('click', function () {
   modal.classList.remove('show-modal');
 });
 
+window.addEventListener('click', function (event) {
+  event.target === modal ? modal.classList.remove('show-modal') : false;
+});
+
 function displayRating(vote_average) {
   const calculatedRating = (vote_average * 5) / 10;
   const numberOfStars = Math.trunc(calculatedRating);
