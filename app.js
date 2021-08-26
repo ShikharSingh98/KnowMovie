@@ -39,12 +39,16 @@ function completed() {
   loader.hidden = true;
 }
 
-closeModal.addEventListener('click', function () {
+function handleCloseModal() {
+  trailerVideo.setAttribute('src', '');
   modal.classList.remove('show-modal');
-});
+}
 
+closeModal.addEventListener('click', handleCloseModal);
 window.addEventListener('click', function (event) {
-  event.target === modal ? modal.classList.remove('show-modal') : false;
+  if (event.target === modal) {
+    handleCloseModal();
+  }
 });
 
 function displayRating(vote_average) {
