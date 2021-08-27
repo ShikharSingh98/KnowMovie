@@ -106,7 +106,7 @@ displayMovieCard();
 
 window.addEventListener('scroll', function () {
   const { scrollY, innerHeight } = window;
-  if (scrollY + innerHeight >= document.documentElement.offsetHeight) {
+  if (scrollY + innerHeight >= document.documentElement.offsetHeight - 800) {
     pageCount++;
     displayMovieCard();
   }
