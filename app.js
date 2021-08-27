@@ -113,7 +113,7 @@ window.addEventListener('scroll', function () {
 
   setTimeout(function () {
     isScrolled = false;
-  }, 1500);
+  }, 1000);
 });
 
 displayMovieCard();
