@@ -187,3 +187,54 @@ body {
   color: #ffd60a;
   font-size: 1.2rem;
 }
+
+@media screen and (max-width: 600px) {
+  .header-container {
+    padding: 1rem;
+  }
+
+  .header-brand {
+    font-size: 1.5rem;
+  }
+
+  .header-brand-img {
+    width: 35%;
+  }
+
+  .banner-container {
+    margin: 1rem;
+  }
+  .banner-text span {
+    font-size: 1.3rem;
+    margin: 0.2rem 0;
+  }
+  .banner-img {
+    width: 45%;
+  }
+  .movies-container {
+    margin-top: 3rem;
+  }
+  .movies-container img {
+    width: 25%;
+    margin: 1rem;
+  }
+  .modal {
+    width: 350px;
+    padding: 1rem;
+  }
+  .modal-header {
+    margin-bottom: 1rem;
+  }
+  #movie-name {
+    font-size: 2rem;
+  }
+  .overview {
+    font-size: 1.1rem;
+  }
+  .overview-heading {
+    font-size: 1.8rem;
+  }
+  .movie-info {
+    margin: 1rem;
+  }
+}
