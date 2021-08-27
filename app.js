@@ -2,7 +2,6 @@ const movieContainer = document.getElementById('movies-container');
 const loader = document.getElementById('loader');
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('close-modal');
-const trailerVideoContainer = document.getElementById('trailer-video-container');
 const trailerVideo = document.getElementById('trailer-video');
 const noTrailerMessage = document.getElementById('no-trailer-message');
 const movieName = document.getElementById('movie-name');
@@ -73,12 +72,12 @@ async function openModal(event) {
 
   if (selectedMovie.videos.results.length) {
     const movieTrailerVideo = selectedMovie.videos.results.find((movie) => movie.type === 'Trailer' || movie.type === 'Teaser');
-    noTrailerMessage.remove();
-    trailerVideoContainer.append(trailerVideo);
+    noTrailerMessage.style.display = 'none';
+    trailerVideo.style.display = 'block';
     trailerVideo.setAttribute('src', `https://www.youtube.com/embed/${movieTrailerVideo.key}`);
   } else {
-    trailerVideo.remove();
-    trailerVideoContainer.append(noTrailerMessage);
+    trailerVideo.style.display = 'none';
+    noTrailerMessage.style.display = 'flex';
   }
   movieName.textContent = selectedMovie.title;
   displayRating(selectedMovie.vote_average);
