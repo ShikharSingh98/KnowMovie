@@ -103,8 +103,6 @@ async function displayMovieCard() {
   completed();
 }
 
-displayMovieCard();
-
 window.addEventListener('scroll', function () {
   const { scrollY, innerHeight } = window;
   if (scrollY + innerHeight >= document.documentElement.offsetHeight - 800 && !isScrolled) {
@@ -115,5 +113,7 @@ window.addEventListener('scroll', function () {
 
   setTimeout(function () {
     isScrolled = false;
-  }, 1200);
+  }, 1500);
 });
+
+displayMovieCard();
