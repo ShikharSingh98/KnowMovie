@@ -216,7 +216,7 @@ body {
   }
   .movies-container img {
     width: 25%;
-    margin: 1rem;
+    margin: 0.5rem;
   }
   .modal {
     width: 350px;

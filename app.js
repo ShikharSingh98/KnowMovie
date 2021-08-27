@@ -13,6 +13,7 @@ let pageCount = 1;
 let movies = [];
 
 let selectedMovie = null;
+let isScrolled = false;
 
 async function getDataFromApi(additionalUrl) {
   loading();
@@ -106,8 +107,13 @@ displayMovieCard();
 
 window.addEventListener('scroll', function () {
   const { scrollY, innerHeight } = window;
-  if (scrollY + innerHeight >= document.documentElement.offsetHeight - 800) {
+  if (scrollY + innerHeight >= document.documentElement.offsetHeight - 800 && !isScrolled) {
+    isScrolled = true;
     pageCount++;
     displayMovieCard();
   }
+
+  setTimeout(function () {
+    isScrolled = false;
+  }, 1200);
 });
